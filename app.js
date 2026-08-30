@@ -108,22 +108,22 @@ function playGame() {
     //Round 2
     const player2 = getPlayerChoice();
     const computer2 = getComputerChoice();
-    console.log('Round 1: ' ,playRound(player2, computer2));
+    console.log('Round 2: ' ,playRound(player2, computer2));
 
     //Round 3
     const player3 = getPlayerChoice();
     const computer3 = getComputerChoice();
-    console.log('Round 1: ' ,playRound(player3, computer3));
+    console.log('Round 3: ' ,playRound(player3, computer3));
 
     //Round 4
     const player4 = getPlayerChoice();
     const computer4 = getComputerChoice();
-    console.log('Round 1: ' ,playRound(player4, computer4));
+    console.log('Round 4: ' ,playRound(player4, computer4));
 
     //Round 5
     const player5 = getPlayerChoice();
     const computer5 = getComputerChoice();
-    console.log('Round 1: ' ,playRound(player5, computer5));
+    console.log('Round 5: ' ,playRound(player5, computer5));
 
     if(computerScore > playerScore) {
         console.log("Woops😞!,You lost Wanna play again?");
