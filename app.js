@@ -17,7 +17,7 @@
  * We need to play 5 times inorder to get the overall winner
  */
 
-const playerInput = prompt("Enter a Choice!");
+// const playerInput = prompt("Enter a Choice!");
 const computerChoice = Math.floor(Math.random() * 3);
 const playerMove = getPlayerChoice();
 const computerMove = getComputerChoice();
@@ -97,44 +97,3 @@ function playRound(playerInput, computerChoice) {
     }
 
 }
-
-function playGame() {
-
-    //Round 1
-    const player1 = getPlayerChoice();
-    const computer1 = getComputerChoice();
-    console.log('Round 1: ' ,playRound(player1, computer1));
-
-    //Round 2
-    const player2 = getPlayerChoice();
-    const computer2 = getComputerChoice();
-    console.log('Round 2: ' ,playRound(player2, computer2));
-
-    //Round 3
-    const player3 = getPlayerChoice();
-    const computer3 = getComputerChoice();
-    console.log('Round 3: ' ,playRound(player3, computer3));
-
-    //Round 4
-    const player4 = getPlayerChoice();
-    const computer4 = getComputerChoice();
-    console.log('Round 4: ' ,playRound(player4, computer4));
-
-    //Round 5
-    const player5 = getPlayerChoice();
-    const computer5 = getComputerChoice();
-    console.log('Round 5: ' ,playRound(player5, computer5));
-
-    if(computerScore > playerScore) {
-        console.log("Woops😞!,You lost Wanna play again?");
-    } else {
-        console.log("Hooray🎉! You won!!!");
-    }
-
-}
-
-playGame();
-console.log('Player chooses: ',playerMove);
-console.log('Computer chooses: ',computerMove);
-console.log('Player score: ', playerScore);
-console.log('Computer score: ', computerScore);
