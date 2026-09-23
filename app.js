@@ -17,10 +17,8 @@
  * We need to play 5 times inorder to get the overall winner
  */
 
-// const playerInput = prompt("Enter a Choice!");
 const computerChoice = Math.floor(Math.random() * 3);
 const playerMove = getPlayerChoice();
-const computerMove = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
 
@@ -36,7 +34,7 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
+function getPlayerChoice(playerInput) {
     if(playerInput === 'rock') {
         return 'rock';
     } else if(playerInput === 'paper') {
@@ -97,3 +95,15 @@ function playRound(playerInput, computerChoice) {
     }
 
 }
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        
+        let userMove = button.id;
+        let computerMove = getComputerChoice();
+
+
+    });
+});
