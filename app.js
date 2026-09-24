@@ -17,27 +17,17 @@
  * We need to play 5 times inorder to get the overall winner
  */
 
-const computerChoice = Math.floor(Math.random() * 3);
-const playerMove = getPlayerChoice();
 let playerScore = 0;
 let computerScore = 0;
 
 
 function getComputerChoice() {
 
+    const computerChoice = Math.floor(Math.random() * 3);
+
     if(computerChoice === 1) {
         return 'rock';
     } else if(computerChoice === 2) {
-        return 'paper';
-    } else {
-        return 'scissors';
-    }
-}
-
-function getPlayerChoice(playerInput) {
-    if(playerInput === 'rock') {
-        return 'rock';
-    } else if(playerInput === 'paper') {
         return 'paper';
     } else {
         return 'scissors';
@@ -97,13 +87,29 @@ function playRound(playerInput, computerChoice) {
 }
 
 const buttons = document.querySelectorAll('button');
+const scoreBoard = document.querySelector('#score-board');
+const resultScreen = document.querySelector('#result');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        
-        let userMove = button.id;
-        let computerMove = getComputerChoice();
 
+        const playerChoice = button.id;
+        const computerMove = getComputerChoice();
+        const result = playRound(playerChoice, computerMove);
+        let roundNumber = 0;
+        const totalRounds = 5;
 
+        scoreBoard.textContent = `Your Score: ${playerScore} | Computer: ${computerScore}`;
+        resultScreen.textContent = result;
+
+        if(roundNumber === 5) {
+            if(playerScore > computerScore) {
+                resultScreen.textContent = 'You Won🙌'
+            }
+            else if(computerScore < playerScore) {
+                resultScreen.textContent = 'You lost😢'
+            }
+
+        }
     });
 });
