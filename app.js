@@ -113,18 +113,6 @@ function checkGameWinner() {
     }
 }
 
-function resetGame() {
-    playerScore = 0;
-    computerScore = 0;
-
-    playerDisplay.textContent = `Player Chose: ${playerChoice}`;
-    computerDisplay.textContent = `Computer Chose: ${computerMove}`;
-    outcomeDisplay.textContent = outcome;
-    scoreBoard.textContent = `You: ${playerScore} Computer: ${computerScore}`;
-
-    buttons.forEach((button) => button.disabled = false);
-
-}
 
 const buttons = document.querySelectorAll('button');
 const resetBtn = document.getElementById('reset-btn');
@@ -149,5 +137,3 @@ buttons.forEach((button) => {
 
     });
 });
-
-resetBtn.addEventListener('click', resetGame);
